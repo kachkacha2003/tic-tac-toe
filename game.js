@@ -184,20 +184,7 @@ let click = (event) => {
       btn.style.backgroundColor = "#A8BFC9";
     });
     round.addEventListener("click", () => {
-      for(let k=0;k<button.length;k++){
-        button[k].addEventListener("mouseover",()=>{
-          if(button[k].children[1].style.display=="block" || button[k].children[3].style.display=="block"){
-            return false;
-          }
-          button[k].children[0].style.display="block";
-  
-        })
-        button[k].addEventListener("mouseout",()=>{
-          button[k].children[0].style.display="none";
-  
-        })
-        
-      }
+      
       btn.style.cursor = "pointer";
       btn.addEventListener("mouseover", () => {
         btn.style.backgroundColor = "#DBE8ED";
