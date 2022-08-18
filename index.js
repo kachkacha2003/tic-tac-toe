@@ -22,7 +22,7 @@ let c = (event) => {
   if (val !== 0) {
     val.style.backgroundColor = "";
     val.children[0].src =
-      "file:///C:/Users/User/Desktop/tic-tac-toe/starter-code/assets/icon-o.svg";
+      "./starter-code/assets/icon-o.svg";
       
   }
 
@@ -32,7 +32,7 @@ let c = (event) => {
 
   valu.style.backgroundColor = "rgba(168, 191, 201, 1)";
   valu.children[0].src =
-    "file:///C:/Users/User/Desktop/tic-tac-toe/starter-code/assets/icon-x copy.svg";
+    "./starter-code/assets/photo1.svg";
   if (valu !== 0) {
     btn.removeEventListener("click", defal);
     btn2.removeEventListener("click", defal);
@@ -46,13 +46,13 @@ let d = (event) => {
   if (valu !== 0) {
     valu.style.backgroundColor = "";
     valu.children[0].src =
-      "file:///C:/Users/User/Desktop/tic-tac-toe/starter-code/assets/icon-x.svg";
+      "./starter-code/assets/icon-x.svg";
   }
 
   val = event.currentTarget;
   val.style.backgroundColor = "rgba(168, 191, 201, 1)";
   val.children[0].src =
-    "file:///C:/Users/User/Desktop/tic-tac-toe/starter-code/assets/icon-o copy.svg";
+    "./starter-code/assets/photo.svg";
   if (val !== 0) {
     btn.removeEventListener("click", defal);
     btn2.removeEventListener("click", defal);
