@@ -167,7 +167,7 @@ let click = (event) => {
     display.style.display = "flex";
     display.children[1].style.display = "flex";
     display.children[1].children[0].src =
-      "file:///C:/Users/User/Desktop/tic-tac-toe/starter-code/assets/lasha.svg";
+      "./starter-code/assets/lasha.svg";
     display.children[0].style.fontSize = "";
     if (localStorage.getItem("player-symbol") == "X (P1)") {
       display.children[0].textContent = "PLAYER 1 WINS!";
@@ -257,7 +257,7 @@ let click = (event) => {
     btn.removeEventListener("click", btn_func);
 
     display.children[1].children[0].src =
-      "file:///C:/Users/User/Desktop/tic-tac-toe/starter-code/assets/lasha2.svg";
+      "./starter-code/assets/lasha2.svg";
     display.children[1].style.display = "flex";
     display.children[0].style.fontSize = "";
     if (localStorage.getItem("player-symbol") == "X (P1)") {
