@@ -21,11 +21,20 @@ let btn = document.querySelector(".button");
 let mouse_variable = 0;
 let displayTwo = document.querySelector(".display-2");
 let dissapear = document.querySelector(".cancel");
-let mous_count=0;
+let mous_count = 0;
+let z = 0;
+for (let m = 0; m < button.length; m++) {
+  button[m].addEventListener("mouseover", () => {
+    button[
+      m
+    ].style.background = `url("./starter-code/assets/icon-x-outline.svg")no-repeat center`;
+  });
+  button[m].addEventListener("mouseout", () => {
+    button[m].style.background = "";
+    button[m].style.backgroundColor = "#1F3641";
+  });
+}
 
-
-
-  
 let btn_func = () => {
   container.style.opacity = "20%";
   document.body.style.backgroundColor = "black";
@@ -63,25 +72,60 @@ btn.addEventListener("click", btn_func);
 first.children[0].textContent = localStorage.getItem("player-symbol");
 third.children[0].textContent = localStorage.getItem("player-symbol-2");
 
-
-
-
- 
-
-
-
-
-
 let click = (event) => {
   k = event.currentTarget;
 
+  if (z % 2 == 0) {
+  
+    for (let m = 0; m < button.length; m++) {
+      button[m].addEventListener("mouseover", () => {
+
+        
+        button[m].style.background = `url("./starter-code/assets/icon-o-outline.svg")no-repeat center`;
+        for(t=0;t<button.length;t++){
+          if(button[t].children[3].style.display=="block" || button[t].children[1].style.display=="block"){
+            button[t].style.background=""
+            button[t].style.backgroundColor="#1F3641"
+        }
+
+        }
+      });
+      button[m].addEventListener("mouseout", () => {
+        
+        button[m].style.background = "";
+        button[m].style.backgroundColor = "#1F3641";
+      });
+    }
+  } else {
+    
+    for (let m = 0; m < button.length; m++) {
+      button[m].addEventListener("mouseover", () => {
+        button[
+          m
+        ].style.background = `url("./starter-code/assets/icon-x-outline.svg")no-repeat center`;
+        for(t=0;t<button.length;t++){
+          if(button[t].children[3].style.display=="block" || button[t].children[1].style.display=="block"){
+            button[t].style.background=""
+            button[t].style.backgroundColor="#1F3641"
+        }
+
+        }
+        
+      });
+      button[m].addEventListener("mouseout", () => {
+        button[m].style.background = "";
+        button[m].style.backgroundColor = "#1F3641";
+      });
+    }
+    
+  }
+  z++;
+  console.log(z)
+  
+
   if (count % 2 === 0) {
-    
-    
-    
     if (
       k.children[1].style.display == "none" &&
-      
       k.children[3].style.display == "block"
     ) {
       return false;
@@ -96,11 +140,6 @@ let click = (event) => {
       return false;
     }
   } else {
-    
-    
-
-    
-    
     if (
       k.children[0].style.display == "none" &&
       k.children[1].style.display == "block"
@@ -166,8 +205,7 @@ let click = (event) => {
     document.body.style.backgroundColor = "black";
     display.style.display = "flex";
     display.children[1].style.display = "flex";
-    display.children[1].children[0].src =
-      "./starter-code/assets/lasha.svg";
+    display.children[1].children[0].src = "./starter-code/assets/lasha.svg";
     display.children[0].style.fontSize = "";
     if (localStorage.getItem("player-symbol") == "X (P1)") {
       display.children[0].textContent = "PLAYER 1 WINS!";
@@ -184,7 +222,6 @@ let click = (event) => {
       btn.style.backgroundColor = "#A8BFC9";
     });
     round.addEventListener("click", () => {
-      
       btn.style.cursor = "pointer";
       btn.addEventListener("mouseover", () => {
         btn.style.backgroundColor = "#DBE8ED";
@@ -198,6 +235,18 @@ let click = (event) => {
       container.style.opacity = "100%";
       document.body.style.backgroundColor = "";
       count = 0;
+      z=0;
+      for (let m = 0; m < button.length; m++) {
+        button[m].addEventListener("mouseover", () => {
+          button[
+            m
+          ].style.background = `url("./starter-code/assets/icon-x-outline.svg")no-repeat center`;
+        });
+        button[m].addEventListener("mouseout", () => {
+          button[m].style.background = "";
+          button[m].style.backgroundColor = "#1F3641";
+        });
+      }
 
       for (let i = 0; i < button.length; i++) {
         button[i].children[1].style.display = "none";
@@ -243,8 +292,7 @@ let click = (event) => {
 
     btn.removeEventListener("click", btn_func);
 
-    display.children[1].children[0].src =
-      "./starter-code/assets/lasha2.svg";
+    display.children[1].children[0].src = "./starter-code/assets/lasha2.svg";
     display.children[1].style.display = "flex";
     display.children[0].style.fontSize = "";
     if (localStorage.getItem("player-symbol") == "X (P1)") {
@@ -253,7 +301,7 @@ let click = (event) => {
       display.children[0].textContent = "PLAYER 1 WINS!";
     }
     display.style.display = "flex";
-    
+
     container.style.filter = "blur(3px)";
     btn.style.cursor = "pointer";
     btn.addEventListener("mouseover", () => {
@@ -263,9 +311,6 @@ let click = (event) => {
       btn.style.backgroundColor = "#A8BFC9";
     });
     round.addEventListener("click", () => {
-      
-        
-      
       btn.style.cursor = "auto";
       btn.addEventListener("mouseover", () => {
         btn.style.backgroundColor = "#DBE8ED";
@@ -278,7 +323,20 @@ let click = (event) => {
       container.style.filter = "none";
       container.style.opacity = "100%";
       document.body.style.backgroundColor = "";
+      z=0;
+      for (let m = 0; m < button.length; m++) {
+        button[m].addEventListener("mouseover", () => {
+          button[
+            m
+          ].style.background = `url("./starter-code/assets/icon-x-outline.svg")no-repeat center`;
+        });
+        button[m].addEventListener("mouseout", () => {
+          button[m].style.background = "";
+          button[m].style.backgroundColor = "#1F3641";
+        });
+      }
       count = 0;
+      
 
       for (let i = 0; i < button.length; i++) {
         button[i].children[1].style.display = "none";
@@ -311,10 +369,6 @@ let click = (event) => {
       });
 
       round.addEventListener("click", () => {
-        
-          
-          
-        
         btn.style.cursor = "auto";
         btn.addEventListener("click", btn_func);
         btn.addEventListener("mouseover", () => {
@@ -328,6 +382,18 @@ let click = (event) => {
         container.style.opacity = "100%";
         document.body.style.backgroundColor = "";
         count = 0;
+        z=0;
+        for (let m = 0; m < button.length; m++) {
+          button[m].addEventListener("mouseover", () => {
+            button[
+              m
+            ].style.background = `url("./starter-code/assets/icon-x-outline.svg")no-repeat center`;
+          });
+          button[m].addEventListener("mouseout", () => {
+            button[m].style.background = "";
+            button[m].style.backgroundColor = "#1F3641";
+          });
+        }
         turn.children[0].style.display = "block";
         turn.children[1].style.display = "none";
 

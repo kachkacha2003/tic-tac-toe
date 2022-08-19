@@ -235,14 +235,13 @@ cursor: pointer;
 display: flex;
 justify-content: center;
 align-items: center;
+
 }
 
 .u{
   display: none;
 }
-.nolik{
-  display: none;
-}
+
 
 
 .b{
