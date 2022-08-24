@@ -12,7 +12,7 @@ let flex_n1 = document.querySelector(".flex-n1");
 console.log(localStorage.getItem("player-symbol"));
 console.log(localStorage.getItem("player-symbol-2"));
 
-let count2 = 0;
+let count2;
 
 let round = document.querySelector(".round");
 let turn = document.querySelector(".turn");
@@ -1663,6 +1663,7 @@ if (localStorage.getItem("clicked") == "player") {
           button[i].addEventListener("click", click);
         }
       });
+      return false;
     };
     for (let m = 0; m < button.length; m++) {
       button[m].addEventListener("mouseover", () => {
@@ -2311,11 +2312,10 @@ if (localStorage.getItem("clicked") == "player") {
               container.style.opacity = "100%";
               document.body.style.backgroundColor = "";
 
-              count2 = 1;
+              
               z=0;
               x_masive = [];
               o_masive = [];
-
               setTimeout(() => {
                 button[4].children[1].style.display = "block";
           
@@ -2326,6 +2326,8 @@ if (localStorage.getItem("clicked") == "player") {
                 turn.children[1].style.display = "block";
                 your_turn = true;
               }, 1000);
+              count2 = 1;
+              
               for (let i = 0; i < button.length; i++) {
                 button[i].children[1].style.display = "none";
                 button[i].children[3].style.display = "none";
