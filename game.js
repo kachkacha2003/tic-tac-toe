@@ -12,7 +12,7 @@ let flex_n1 = document.querySelector(".flex-n1");
 console.log(localStorage.getItem("player-symbol"));
 console.log(localStorage.getItem("player-symbol-2"));
 
-let count2;
+let count2 = 0;
 
 let round = document.querySelector(".round");
 let turn = document.querySelector(".turn");
@@ -1640,20 +1640,23 @@ if (localStorage.getItem("clicked") == "player") {
         document.body.style.backgroundColor = "";
 
         z = 0;
-        count2 = 1;
+       
        
         x_masive = [];
         o_masive = [];
+        
         setTimeout(() => {
           button[4].children[1].style.display = "block";
     
-          x_masive.push(4);
+         
     
     
           turn.children[0].style.display = "none";
           turn.children[1].style.display = "block";
           your_turn = true;
         }, 1000);
+        count2 = 0;
+       
 
         for (let i = 0; i < button.length; i++) {
           button[i].children[1].style.display = "none";
@@ -1663,7 +1666,7 @@ if (localStorage.getItem("clicked") == "player") {
           button[i].addEventListener("click", click);
         }
       });
-      
+      return false;
     };
     for (let m = 0; m < button.length; m++) {
       button[m].addEventListener("mouseover", () => {
@@ -1685,7 +1688,7 @@ if (localStorage.getItem("clicked") == "player") {
         button[m].style.backgroundColor = "#1F3641";
       });
     }
-    let count2=1;
+    let count2=0;
     z=0;
     let arry = [4, 8, 1, 3,6];
     let your_turn = false;
@@ -2240,45 +2243,49 @@ if (localStorage.getItem("clicked") == "player") {
             }
           }}
           if(o_masive[0]==0){
-            arry=[4,2,3,1,8]
+            arry=[2,3,1,8]
   
           }
           if(o_masive[0]==1 ){
-            arry=[4,2,8]
+            arry=[2,8]
   
           }
           if(o_masive[0]==2 ){
-            arry=[4,0,5,1,6]
+            arry=[0,5,1,6]
   
           }
-
           if(o_masive[0]==3 ){
-            arry=[4,8,6]
+            arry=[8,6]
   
           }
           if(o_masive[0]==5 ){
-            arry=[4,0,2]
+            arry=[0,2]
   
           }
           if(o_masive[0]==7 ){
-            arry=[4,0,6]
+            arry=[0,6]
   
           }
           if(o_masive[0]==6){
-            arry=[4,8,3,1,2]
+            arry=[8,3,1,2]
   
           }
           if(o_masive[0]==8){
-            arry=[4,6,5,1,0]
+            arry=[6,5,1,0]
   
           }
   
   
   
-  
-          button[arry[count2]].children[1].style.display = "block";
+  if(button[arry[count2]].children[1].style.display == "block"){
+    return false;
+  }else{
+    button[arry[count2]].children[1].style.display = "block";
     
           x_masive.push(arry[count2]);
+
+  }
+          
           x_masive.sort(function (a, b) {
             return a - b;
           });
@@ -2287,7 +2294,7 @@ if (localStorage.getItem("clicked") == "player") {
          
   
           count2++
-          if (count2 == 5) {
+          if (count2 == 4) {
             for (let i = 0; i < button.length; i++) {
               button[i].removeEventListener("click", click);
             }
@@ -2317,10 +2324,11 @@ if (localStorage.getItem("clicked") == "player") {
               container.style.opacity = "100%";
               document.body.style.backgroundColor = "";
 
-              
+            
               z=0;
               x_masive = [];
               o_masive = [];
+              count2 = 0;
               setTimeout(() => {
                 button[4].children[1].style.display = "block";
           
@@ -2331,8 +2339,9 @@ if (localStorage.getItem("clicked") == "player") {
                 turn.children[1].style.display = "block";
                 your_turn = true;
               }, 1000);
-              count2 = 1;
-              
+             
+
+             
               for (let i = 0; i < button.length; i++) {
                 button[i].children[1].style.display = "none";
                 button[i].children[3].style.display = "none";
