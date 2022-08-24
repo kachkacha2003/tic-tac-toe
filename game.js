@@ -1663,7 +1663,7 @@ if (localStorage.getItem("clicked") == "player") {
           button[i].addEventListener("click", click);
         }
       });
-      return false;
+      
     };
     for (let m = 0; m < button.length; m++) {
       button[m].addEventListener("mouseover", () => {
@@ -2247,6 +2247,11 @@ if (localStorage.getItem("clicked") == "player") {
             arry=[4,2,8]
   
           }
+          if(o_masive[0]==2 ){
+            arry=[4,0,5,1,6]
+  
+          }
+
           if(o_masive[0]==3 ){
             arry=[4,8,6]
   
