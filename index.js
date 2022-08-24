@@ -6,12 +6,33 @@ let valu = 0;
 let first = document.querySelector(".first");
 let second = document.querySelector(".second");
 
+btn.addEventListener("click",()=>{
+  localStorage.setItem("clicked", "computer")
+})
+btn2.addEventListener("click",()=>{
+  localStorage.setItem("clicked", "player")
+})
+
+
 let defal = (b) => {
+ 
   b.preventDefault();
+
+
 };
 
-btn.addEventListener("click", defal);
-btn2.addEventListener("click", defal);
+
+btn.addEventListener("click", defal,
+
+
+
+
+
+);
+btn2.addEventListener("click", defal,
+
+
+);
 
 let c = (event) => {
   
@@ -36,6 +57,8 @@ let c = (event) => {
   if (valu !== 0) {
     btn.removeEventListener("click", defal);
     btn2.removeEventListener("click", defal);
+    
+    
   }
 };
 let d = (event) => {
@@ -56,6 +79,7 @@ let d = (event) => {
   if (val !== 0) {
     btn.removeEventListener("click", defal);
     btn2.removeEventListener("click", defal);
+    
   }
 };
 first.addEventListener("click", c);
